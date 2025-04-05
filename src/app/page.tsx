@@ -44,7 +44,7 @@ export default function Home() {
 		setInput('');
 
 		mutate(input, {
-			// @typescript-eslint/no-explicit-any
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			onError(error: any) {
 				const message =
 					error?.response?.data?.message ||
@@ -52,7 +52,7 @@ export default function Home() {
 					'Something went wrong';
 				setErrorMessage(message);
 			},
-			// @typescript-eslint/no-explicit-any
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			onSuccess(data: any) {
 				const botMessage: Message = {
 					sender: 'bot',
@@ -74,7 +74,7 @@ export default function Home() {
 							<div className="w-full flex min-h-[calc(100vh-8rem)] items-center justify-center">
 								<div className="space-y-4">
 									<h1 className="text-xl lg:text-3xl">
-										Hello there😎❤️. I'm KIRA.
+										Hello there😎❤️. I&#39;m KIRA.
 									</h1>
 									<p className="text-center text-xl">
 										How can i assist you today?
