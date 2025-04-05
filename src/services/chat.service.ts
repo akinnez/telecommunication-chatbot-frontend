@@ -9,11 +9,6 @@ const api = axios.create({
 	timeout: 1000 * 60,
 });
 
-export type chatPrompt = {
-	id: string;
-	response: any;
-};
-
 export async function chat(message: string) {
 	return await api.post(`/chat`, {message});
 }

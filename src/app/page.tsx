@@ -27,7 +27,6 @@ export default function Home() {
 
 	const handleSend = async () => {
 		if (!input.trim()) return;
-		console.log(isPending);
 
 		const userMessage: Message = {sender: 'user', text: input};
 		setMessages((prev) => [...prev, userMessage]);
@@ -39,8 +38,8 @@ export default function Home() {
 					...prev,
 					{sender: 'bot', text: error.message},
 				]);
-				console.log(isPending);
 			},
+			// @typescript-eslint/no-explicit-any
 			onSuccess(data: any) {
 				const botMessage: Message = {
 					sender: 'bot',
@@ -57,17 +56,17 @@ export default function Home() {
 			<div className="lg:px-5 lg:grid lg:grid-cols-4 gap-x-10">
 				<div className="rounded-br-4xl rounded-tl-4xl m-5 col-span-1 min-h-[calc(100vh-3rem)] bg-foreground dark:bg-card hidden lg:block"></div>
 				<div className="lg:col-span-3 bg-card relative lg:rounded-4xl min-h-[calc(100vh-8rem)] lg:min-h-[calc(100vh-3rem)] w-full">
-					<div className="flex-1 overflow-y-auto p-4 space-y-5 max-h-[calc(100vh-6rem)]">
+					<div className="flex-1 overflow-y-auto p-4 space-y-5 max-h-[calc(100vh-8rem)] lg:max-h-[calc(100vh-6rem)]">
 						{messages.map((msg, i) => (
 							<div
 								key={i}
-								className={`py-4 px-3 max-w-md rounded-lg ${
+								className={`px-3 lg:max-w-md max-w-[calc(100%-3rem)]  ${
 									msg.sender === 'user'
-										? 'bg-blue-950 text-foreground self-end ml-auto'
-										: 'bg-foreground text-card self-start mr-auto'
+										? 'text-foreground self-end ml-auto'
+										: 'text-card self-start mr-auto'
 								}`}
 							>
-								{msg.text}
+								{isPending ? 'Loading ...' : msg.text}
 							</div>
 						))}
 					</div>
