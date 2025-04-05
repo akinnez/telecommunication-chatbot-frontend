@@ -1,5 +1,9 @@
 function TelcomChatPage() {
-	return <>this is telcom chat TelcomChatPage</>;
+	return (
+		<>
+			<div></div>
+		</>
+	);
 }
 
 export default TelcomChatPage;
