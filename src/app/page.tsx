@@ -43,7 +43,7 @@ export default function Home() {
 		});
 		setInput('');
 
-		mutate(input, {
+		mutate(messageToSend, {
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			onError(error: any) {
 				const message =
