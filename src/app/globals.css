@@ -27,3 +27,18 @@ body {
 	color: var(--foreground);
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+::-webkit-scrollbar {
+	height: 1px;
+	width: 1px;
+	background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--foreground);
+	-webkit-border-radius: 1rem;
+}
+
+::-webkit-scrollbar-corner {
+	background: var(--foreground);
+}
