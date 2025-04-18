@@ -37,6 +37,7 @@ export default function Home() {
 		mutationFn: chat,
 	});
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	function errorMess(msg: any, message: string) {
 		setErrorMessage(message);
 		return {...msg, error: message};
