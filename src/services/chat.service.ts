@@ -1,14 +1,5 @@
-import axios from 'axios';
+import {api} from '@/component/axios.settings';
 
-const api = axios.create({
-	baseURL: process.env.NEXT_PUBLIC_API_URL,
-	headers: {
-		'Content-Type': 'application/json',
-	},
-	timeoutErrorMessage: 'Connection Timeout',
-	timeout: 1000 * 60,
-});
-
-export async function chat(message: string) {
-	return await api.post(`/chat`, {message});
+export async function chat(payload: {message: string; threadId: string}) {
+	return await api.post(`/chat`, payload);
 }
