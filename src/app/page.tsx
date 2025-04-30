@@ -93,21 +93,26 @@ export default function Home() {
 
 	return (
 		<>
-			<div className="lg:grid lg:grid-cols-4">
-				<div className="rounded-br-4xl rounded-tl-4xl m-5 col-span-1 min-h-[calc(100vh-3rem)] bg-foreground dark:bg-card hidden lg:block"></div>
+			<div className="">
+				{/* <div className="lg:grid lg:grid-cols-4"> */}
+				{/* <div className="rounded-br-4xl rounded-tl-4xl m-5 col-span-1 min-h-[calc(100vh-3rem)] bg-foreground dark:bg-card hidden lg:block"></div> */}
 				<div className="flex flex-col h-screen bg-card col-span-3">
-					{/* <header className="px-6 py-4 border-b border-border text-lg font-semibold bg-background">
-							KIRA Chat 🤖
-						</header> */}
+					<header className="px-6 py-4 border-b border-border text-lg font-semibold bg-background">
+						KIRA Chat 🤖
+					</header>
 
-					<div className="flex-1 overflow-y-auto px-4 lg:px-10 py-6 space-y-4">
+					<div className="flex-1 overflow-y-auto px-4 lg:px-20 py-6 space-y-4">
 						{messages.length == 0 ? (
-							<div className="flex h-full items-center justify-center text-center text-xl text-muted-foreground">
+							<div className="flex h-full items-center justify-center text-xl text-muted-foreground px-10 lg:px-0">
 								<div className="space-y-4">
 									<h1 className="text-xl lg:text-3xl">
-										Hello there😎❤️. I&#39;m KIRA.
+										Hello, I&#39;m KIRA 😎❤️.
 									</h1>
-									<p className="text-center text-xl">
+									<h1 className="text-xl lg:text-2xl">
+										Your virtual assistant for
+										telecom-related queries.
+									</h1>
+									<p className="text-xl">
 										How can i assist you today?
 									</p>
 								</div>
